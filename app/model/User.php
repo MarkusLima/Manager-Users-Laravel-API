@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\model;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -36,4 +36,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function permissionUser()
+    {
+        return $this->hasMany(PermissionUser::class);
+    }
+
+    public function address()
+    {
+        return $this->belongsTo(Address::class);
+    }
 }
