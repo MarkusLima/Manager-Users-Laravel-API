@@ -17,8 +17,8 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('phone');
-            $table->string('CPF');
+            $table->string('phone')->nullable();
+            $table->string('CPF')->nullable();
 
             $table->unsignedBigInteger('address_id')->nullable();
             $table->index('address_id');

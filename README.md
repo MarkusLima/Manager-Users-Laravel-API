@@ -27,6 +27,34 @@ php artisan make:model model/Permission
 php artisan make:model model/PermissionUser
 ```
 
+### Create controllers
+
+```
+php artisan make:controller AuthController
+php artisan make:controller UserController
+php artisan make:controller PermissionController
+php artisan make:controller AddressController
+```
+
+### Create controllers
+
+```
+php artisan make:middleware CheckPermission
+```
+
+### Create seeder
+
+```
+obs: rodar esse comando para gerar o adm do sistema
+'email': 'adm@adm.com',
+'password': '123123123',
+
+
+php artisan db:seed
+```
+
+
+
 
 
 
