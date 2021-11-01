@@ -49,10 +49,21 @@ obs: rodar esse comando para gerar o adm do sistema
 'email': 'adm@adm.com',
 'password': '123123123',
 
-
 php artisan db:seed
 ```
 
+### Packages
+
+```
+composer require zircote/swagger-php
+composer require tymon/jwt-auth:1.0.0-rc.5
+```
+
+### Colection Postman
+
+```
+./docs/
+```
 
 
 

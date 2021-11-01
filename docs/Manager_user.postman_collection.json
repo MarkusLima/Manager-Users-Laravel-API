@@ -1,0 +1,955 @@
+{
+	"info": {
+		"_postman_id": "79c1851f-e771-498a-82dd-37e9344508fa",
+		"name": "Manager_user",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Markus Lima\",\r\n    \"email\": \"Markus@mkbits.com\",\r\n    \"password\": \"123123123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"adm@adm.com\",\r\n    \"password\": \"123123123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzNTcyMTU0OCwiZXhwIjoxNjM1NzI1MTQ4LCJuYmYiOjE2MzU3MjE1NDgsImp0aSI6ImVJSTdlYWpDYVluYnlqa1EiLCJzdWIiOjEsInBydiI6IjJlNGI4MTBmOGNlZDQyMzBjOTAxMzA4ZTY4Zjc3ZTZhMDg4ZDFlYTIifQ.cBtEAHRjNvEg6q3UorKfIv0FgnsbrGMFfFwHK75kz98",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/refresh",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9yZWZyZXNoIiwiaWF0IjoxNjM1Njg3NTU2LCJleHAiOjE2MzU2OTExOTYsIm5iZiI6MTYzNTY4NzU5NiwianRpIjoiWDNLQW9tNkRWOTN2UWlzUCIsInN1YiI6NiwicHJ2IjoiMmU0YjgxMGY4Y2VkNDIzMGM5MDEzMDhlNjhmNzdlNmEwODhkMWVhMiJ9.DOWyhcCx_9F3bXt1a3PiIKTuw06aiNhODHoJPxNLzLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Permissions",
+			"item": [
+				{
+					"name": "find permissions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzNTcyMTU0OCwiZXhwIjoxNjM1NzI1MTQ4LCJuYmYiOjE2MzU3MjE1NDgsImp0aSI6ImVJSTdlYWpDYVluYnlqa1EiLCJzdWIiOjEsInBydiI6IjJlNGI4MTBmOGNlZDQyMzBjOTAxMzA4ZTY4Zjc3ZTZhMDg4ZDFlYTIifQ.cBtEAHRjNvEg6q3UorKfIv0FgnsbrGMFfFwHK75kz98",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/permissions/find/7",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"permissions",
+								"find",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list all permission",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzNTcyMTU0OCwiZXhwIjoxNjM1NzI1MTQ4LCJuYmYiOjE2MzU3MjE1NDgsImp0aSI6ImVJSTdlYWpDYVluYnlqa1EiLCJzdWIiOjEsInBydiI6IjJlNGI4MTBmOGNlZDQyMzBjOTAxMzA4ZTY4Zjc3ZTZhMDg4ZDFlYTIifQ.cBtEAHRjNvEg6q3UorKfIv0FgnsbrGMFfFwHK75kz98",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/permissions",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"permissions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list all permission me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzNTcyMTU0OCwiZXhwIjoxNjM1NzI1MTQ4LCJuYmYiOjE2MzU3MjE1NDgsImp0aSI6ImVJSTdlYWpDYVluYnlqa1EiLCJzdWIiOjEsInBydiI6IjJlNGI4MTBmOGNlZDQyMzBjOTAxMzA4ZTY4Zjc3ZTZhMDg4ZDFlYTIifQ.cBtEAHRjNvEg6q3UorKfIv0FgnsbrGMFfFwHK75kz98",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/permissions/me",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"permissions",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create permission",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzNTcyNDM1NiwiZXhwIjoxNjM1NzI3OTU2LCJuYmYiOjE2MzU3MjQzNTYsImp0aSI6IkZUeldFaGlaSVphZDF6emsiLCJzdWIiOjEsInBydiI6IjJlNGI4MTBmOGNlZDQyMzBjOTAxMzA4ZTY4Zjc3ZTZhMDg4ZDFlYTIifQ.7tdDtOZ2eISgc9FqRh9ZobDdrRopptPwqDpQLF-h9OM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"permission_name\": \"access\",\r\n    \"permission_url\" : \"/api/blablabla\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/permissions/create",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"permissions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update permission",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzNTcyMTU0OCwiZXhwIjoxNjM1NzI1MTQ4LCJuYmYiOjE2MzU3MjE1NDgsImp0aSI6ImVJSTdlYWpDYVluYnlqa1EiLCJzdWIiOjEsInBydiI6IjJlNGI4MTBmOGNlZDQyMzBjOTAxMzA4ZTY4Zjc3ZTZhMDg4ZDFlYTIifQ.cBtEAHRjNvEg6q3UorKfIv0FgnsbrGMFfFwHK75kz98",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"permission_name\": \"access tal\",\r\n    \"permission_url\" : \"/api/blabla\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/permissions/update/26",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"permissions",
+								"update",
+								"26"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete permission",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzNTcyMTU0OCwiZXhwIjoxNjM1NzI1MTQ4LCJuYmYiOjE2MzU3MjE1NDgsImp0aSI6ImVJSTdlYWpDYVluYnlqa1EiLCJzdWIiOjEsInBydiI6IjJlNGI4MTBmOGNlZDQyMzBjOTAxMzA4ZTY4Zjc3ZTZhMDg4ZDFlYTIifQ.cBtEAHRjNvEg6q3UorKfIv0FgnsbrGMFfFwHK75kz98",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/permissions/delete/25",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"permissions",
+								"delete",
+								"25"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "atualiza user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzNTcyMzg1NywiZXhwIjoxNjM1NzI3NDU3LCJuYmYiOjE2MzU3MjM4NTcsImp0aSI6Im1Tcmc4WHBIWmxCZ05WU2QiLCJzdWIiOjEsInBydiI6IjJlNGI4MTBmOGNlZDQyMzBjOTAxMzA4ZTY4Zjc3ZTZhMDg4ZDFlYTIifQ.qaoC4PVijaeReBDSplaL2iZ0Y3tK3RToS0hOUBpjhF8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Markus Lima\",\r\n    \"email\": \"Markus@gmail.c\",\r\n    \"password\": \"123123123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/update/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzNTcyMTU0OCwiZXhwIjoxNjM1NzI1MTQ4LCJuYmYiOjE2MzU3MjE1NDgsImp0aSI6ImVJSTdlYWpDYVluYnlqa1EiLCJzdWIiOjEsInBydiI6IjJlNGI4MTBmOGNlZDQyMzBjOTAxMzA4ZTY4Zjc3ZTZhMDg4ZDFlYTIifQ.cBtEAHRjNvEg6q3UorKfIv0FgnsbrGMFfFwHK75kz98",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/find/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"find",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9yZWZyZXNoIiwiaWF0IjoxNjM1NzIxNTQ4LCJleHAiOjE2MzU3MjcwNjgsIm5iZiI6MTYzNTcyMzQ2OCwianRpIjoibmdSQ25BdHNGc2h2bDgyaSIsInN1YiI6MSwicHJ2IjoiMmU0YjgxMGY4Y2VkNDIzMGM5MDEzMDhlNjhmNzdlNmEwODhkMWVhMiJ9.wxG9pXya6YRNue3G--_gdmg36d1ADGwcjvG0IXTlCXU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9yZWZyZXNoIiwiaWF0IjoxNjM1NzIxNTQ4LCJleHAiOjE2MzU3MjcwNjgsIm5iZiI6MTYzNTcyMzQ2OCwianRpIjoibmdSQ25BdHNGc2h2bDgyaSIsInN1YiI6MSwicHJ2IjoiMmU0YjgxMGY4Y2VkNDIzMGM5MDEzMDhlNjhmNzdlNmEwODhkMWVhMiJ9.wxG9pXya6YRNue3G--_gdmg36d1ADGwcjvG0IXTlCXU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/me",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9yZWZyZXNoIiwiaWF0IjoxNjM1NzIxNTQ4LCJleHAiOjE2MzU3MjcwNjgsIm5iZiI6MTYzNTcyMzQ2OCwianRpIjoibmdSQ25BdHNGc2h2bDgyaSIsInN1YiI6MSwicHJ2IjoiMmU0YjgxMGY4Y2VkNDIzMGM5MDEzMDhlNjhmNzdlNmEwODhkMWVhMiJ9.wxG9pXya6YRNue3G--_gdmg36d1ADGwcjvG0IXTlCXU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/delete/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Addresses",
+			"item": [
+				{
+					"name": "list all address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzNTcyNDM1NiwiZXhwIjoxNjM1NzI3OTU2LCJuYmYiOjE2MzU3MjQzNTYsImp0aSI6IkZUeldFaGlaSVphZDF6emsiLCJzdWIiOjEsInBydiI6IjJlNGI4MTBmOGNlZDQyMzBjOTAxMzA4ZTY4Zjc3ZTZhMDg4ZDFlYTIifQ.7tdDtOZ2eISgc9FqRh9ZobDdrRopptPwqDpQLF-h9OM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/addresses/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"addresses",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "address me",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzNTcyNDM1NiwiZXhwIjoxNjM1NzI3OTU2LCJuYmYiOjE2MzU3MjQzNTYsImp0aSI6IkZUeldFaGlaSVphZDF6emsiLCJzdWIiOjEsInBydiI6IjJlNGI4MTBmOGNlZDQyMzBjOTAxMzA4ZTY4Zjc3ZTZhMDg4ZDFlYTIifQ.7tdDtOZ2eISgc9FqRh9ZobDdrRopptPwqDpQLF-h9OM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/addresses/me",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"addresses",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzNTcyNDM1NiwiZXhwIjoxNjM1NzI3OTU2LCJuYmYiOjE2MzU3MjQzNTYsImp0aSI6IkZUeldFaGlaSVphZDF6emsiLCJzdWIiOjEsInBydiI6IjJlNGI4MTBmOGNlZDQyMzBjOTAxMzA4ZTY4Zjc3ZTZhMDg4ZDFlYTIifQ.7tdDtOZ2eISgc9FqRh9ZobDdrRopptPwqDpQLF-h9OM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/addresses/find/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"addresses",
+								"find",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzNTY4MTQyOCwiZXhwIjoxNjM1Njg1MDI4LCJuYmYiOjE2MzU2ODE0MjgsImp0aSI6IlZ6MmpNSWZBRzNxR0YwVTUiLCJzdWIiOjQsInBydiI6IjJlNGI4MTBmOGNlZDQyMzBjOTAxMzA4ZTY4Zjc3ZTZhMDg4ZDFlYTIifQ.ND_DXl99GOPABkdnwCvLp9DxbQiN7RA9I1lKpJRC0AU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"place\": \"address\",\r\n    \"number\": \"number\",\r\n    \"district\": \"district\",\r\n    \"complement\": \"complemtnet\",\r\n    \"zipcode\": \"zipcode\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/addresses/update/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"addresses",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzNTcyNDM1NiwiZXhwIjoxNjM1NzI3OTU2LCJuYmYiOjE2MzU3MjQzNTYsImp0aSI6IkZUeldFaGlaSVphZDF6emsiLCJzdWIiOjEsInBydiI6IjJlNGI4MTBmOGNlZDQyMzBjOTAxMzA4ZTY4Zjc3ZTZhMDg4ZDFlYTIifQ.7tdDtOZ2eISgc9FqRh9ZobDdrRopptPwqDpQLF-h9OM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"place\": \"address\",\r\n    \"number\": \"number\",\r\n    \"district\": \"district\",\r\n    \"complement\": \"complemtnet\",\r\n    \"zipcode\": \"zipcode\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/addresses/create",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"addresses",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete adress",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzNTcyNDM1NiwiZXhwIjoxNjM1NzI3OTU2LCJuYmYiOjE2MzU3MjQzNTYsImp0aSI6IkZUeldFaGlaSVphZDF6emsiLCJzdWIiOjEsInBydiI6IjJlNGI4MTBmOGNlZDQyMzBjOTAxMzA4ZTY4Zjc3ZTZhMDg4ZDFlYTIifQ.7tdDtOZ2eISgc9FqRh9ZobDdrRopptPwqDpQLF-h9OM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/addresses/delete/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"addresses",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Address",
+			"item": [
+				{
+					"name": "vincula user ao address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzNTcyNDM1NiwiZXhwIjoxNjM1NzI3OTU2LCJuYmYiOjE2MzU3MjQzNTYsImp0aSI6IkZUeldFaGlaSVphZDF6emsiLCJzdWIiOjEsInBydiI6IjJlNGI4MTBmOGNlZDQyMzBjOTAxMzA4ZTY4Zjc3ZTZhMDg4ZDFlYTIifQ.7tdDtOZ2eISgc9FqRh9ZobDdrRopptPwqDpQLF-h9OM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/address/create/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"address",
+								"create",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Permission",
+			"item": [
+				{
+					"name": "vincular user permission",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzNTcyNDM1NiwiZXhwIjoxNjM1NzI3OTU2LCJuYmYiOjE2MzU3MjQzNTYsImp0aSI6IkZUeldFaGlaSVphZDF6emsiLCJzdWIiOjEsInBydiI6IjJlNGI4MTBmOGNlZDQyMzBjOTAxMzA4ZTY4Zjc3ZTZhMDg4ZDFlYTIifQ.7tdDtOZ2eISgc9FqRh9ZobDdrRopptPwqDpQLF-h9OM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"permission_id\": 27\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/permissions/user/create/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"permissions",
+								"user",
+								"create",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vincular user permission Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYzNTcyNDM1NiwiZXhwIjoxNjM1NzI3OTU2LCJuYmYiOjE2MzU3MjQzNTYsImp0aSI6IkZUeldFaGlaSVphZDF6emsiLCJzdWIiOjEsInBydiI6IjJlNGI4MTBmOGNlZDQyMzBjOTAxMzA4ZTY4Zjc3ZTZhMDg4ZDFlYTIifQ.7tdDtOZ2eISgc9FqRh9ZobDdrRopptPwqDpQLF-h9OM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/permissions/user/delete/26",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"permissions",
+								"user",
+								"delete",
+								"26"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
